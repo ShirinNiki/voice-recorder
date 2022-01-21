@@ -1,2 +1,3 @@
 # voice-recorder
-record voices, save recoreded voice or upload as comment
+wordpress voice record plugin.
+record voices, save recoreded voice or upload as comment's post
