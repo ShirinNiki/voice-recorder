@@ -1,0 +1,192 @@
+.vz-wrapper {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: -webkit-gradient(radial, center center, 0, center center, 460, from(#396362), to(#000000));
+    background: -webkit-radial-gradient(circle, #396362, #000000);
+    background: -moz-radial-gradient(circle, #396362, #000000);
+    background: -ms-radial-gradient(circle, #396362, #000000);
+    box-shadow: inset 0 0 160px 0 #000;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.vz-wrapper.-canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: initial;
+    width: initial;
+    background: transparent;
+    box-shadow: none;
+}
+
+@media screen and (min-width: 420px) {
+    .vz-wrapper { box-shadow: inset 0 0 200px 60px #000; }
+}
+body{
+    background-color: #0a78d1;
+}
+button#record, button#mic {
+    font-size: 25px;
+    background-color: #9a073c;
+    border: 3px solid #fafafa;
+    border-radius: 45px;
+    outline: none;
+    margin:0 auto 30px;
+    display: block;
+    padding: 5px 5px 10px;
+    color:#fafafa ;
+    cursor: pointer;
+}
+
+.notRec{
+    background-color: darkred;
+}
+
+.Rec{
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.notRec:before {
+    font-size: 25px;
+    content: "Rec";
+    vertical-align: middle;
+}
+.Rec:before {
+    font-family: fonticon !important;
+    font-size: 25px;
+    content: "Stop";
+    vertical-align: middle;
+}
+@keyframes pulse{
+    0%{
+        box-shadow: 0px 0px 5px 0px rgba(80, 63, 63, 0.03);
+        font-size: 22px;
+    }
+    65%{
+        box-shadow: 0px 0px 5px 15px rgba(173,0,0,.3);
+        font-size: 25px;
+
+    }
+    90%{
+        box-shadow: 0px 0px 5px 15px rgba(173,0,0,0);
+        font-size: 30px;
+    }
+}
+.voice-rec-container{
+    direction: ltr;
+    text-align: center;
+    background: radial-gradient(ellipse at center,rgba(123,0,199,.1) 0,rgba(255,255,255,0) 70%) 25% 60px no-repeat,radial-gradient(ellipse at center,rgba(0,252,255,.1) 0,rgba(0,252,255,0) 70%) 75% -130px no-repeat,radial-gradient(ellipse at center,#1a2f7d 0,#232b56 100%);
+
+}
+.voice-rec-container canvas,.voice-rec-container progress,.voice-rec-container video {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    max-height: 160px;
+}
+
+/*********************************************************************************/
+.recording-part{
+    padding: 20px 0;
+}
+#recordingList{
+    margin: 0 auto;
+    width: 90%;
+    padding-bottom: 20px;
+}
+#recordingList li {
+    color: #ffffff;
+    list-style-type: none;
+    padding: 5px;
+  }
+#moj{ border:1px solid #ffffff;}
+#reset {
+    display: inline-block;
+    font-size: 25px;
+    background-color: #0b245b;
+    border: 2px solid #fafafa;
+    border-radius: 55px;
+    margin: 5px auto;
+    padding: 5px 5px 10px;
+    outline: none;
+    vertical-align: middle;
+}
+
+#recordingList a, #uploadA{
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    font-size: 18px;
+    background-color: #0b245b;
+    border: 2px solid #fafafa;
+    border-radius: 15px;
+    outline: none;
+    vertical-align: baseline;
+    text-align: center;
+    color: #fff;
+}
+#uploadA {
+    width: auto;
+    display: block;
+    padding: 2px 15px;
+    cursor: pointer;
+}
+#uploadA::after{
+    color: #fff;
+    font-size: 20px;
+    vertical-align: bottom;
+    text-align: center;
+}
+
+#reset::after{
+    content: 'Reset';
+    font-size: 20px;
+    text-align: center;
+}
+/******timer**************************************************************/
+#afterProgressBar,#durationProgressBar {
+    width: 100%;
+    max-width: 500px;
+    margin: 2px auto 20px;
+    height: 25px;
+    background-color: #0b245b;
+}
+
+#afterProgressBar div,#durationProgressBar div {
+    height: 100%;
+    text-align: center;
+	vertical-align: middle;
+    padding: 0px;
+    line-height: 25px; /* same as #progressBar height if we want text middle aligned */
+    width: 0;
+    background-color:#9a073c !important;
+    box-sizing: border-box;
+    color: #fff;
+	position: relative;
+}
+.title-rec{
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid #404040;
+    text-align: center;
+    margin: 20px auto 2px;
+	font-weight: bold;
+}
+#curve{
+    width: 100%;
+    height: 150px;
+    margin: 5px auto;
+    display: block;
+}
+.rec-container{
+    width: 100%;
+    max-width: 500px;
+    margin: 5px auto;
+}
+
+/*****************************************/
